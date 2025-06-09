@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greeting</title>
+    <link rel="stylesheet" href="{% static 'myfirst.css' %}">
+</head>
+<body>
+    
+    <h1>hello {{first_name}}, how are you</h1>
+
+    <ul>
+        {% for x in mymembers %}
+        <li>{{ x.first_name }}</li>
+        {% endfor %}
+
+        {% if greeting == 1 %}
+        <h1>Hello</h1>
+        {% else %}
+        <h1>Goodbye</h1>
+        {% endif %}
+    </ul>
+</body>
+</html>

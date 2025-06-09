@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block title %}
+    Fruit list
+    {% endblock %}
+
+    {% for x in fruits%}
+    <h1>{{ x }}</h1>
+    {% endfor %}
+
+    {% block content %}
+    {{ mymembers_list }}
+    {% endblock %}
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone  number</th>
+            <th>Joined date</th>
+
+            {% for x in mymembers_list %}
+            <tr>
+                <td>{{ x.id }}</td>
+                <td>{{ x.first_name }}</td>
+                <td>{{ x.last_name }}</td>
+                <td>{{ x.phone }}</td>
+                <td>{{ x.joined_date }}</td>
+
+            </tr>
+            {% endfor %}
+
+    </table>
+
+    <p>
+        <a href="/">Home</a>
+    </p>
+</body>
+</html>
